@@ -1,12 +1,14 @@
 ﻿### WeatherAPI Outdoor IBM- Pollutant Values
 
 - This API includes an overall Air Quality Index, Air Quality Category Index, category, principal pollutant type, measurement, index number and level, and any applicable health recommendation text.
-- [URL!](https://api.weather.com/v3/aggcommon/v3-wx-globalAirQuality?geocodes=44.798,-63.102;46.294,-63.337;45.046,-64.045;46.113,-62.588;44.859,-63.592;44.291,-64.323;44.379,-64.314;46.419,-62.706;46.328,-62.816;44.382,-65.91&language=en-US&scale=EPA&format=json&apiKey=b9f52b94800243e2b52b948002e3e2f9)
+- **API URL**: '''https://api.weather.com/v3/aggcommon/v3-wx-globalAirQuality?geocodes='''+ geostring +''';&language=en-US&scale=EPA&format=json&apiKey='''+apiKey
+	- Geostring is comma separated co-ordinates (latitude,longitude) followed by semicolon ;
 - JSON Response:
 ```json
+//This response is for 1 lat/long
 "globalairquality": {
-       "latitude": 76.6,
-       "longitude": 87.5,
+       "latitude": 44.798,
+       "longitude": -63.102,
        "source": "Powered by Copernicus Atmosphere Monitoring Service",
        "disclaimer": "Neither the European Commission nor ECMWF is responsible for any use of this information",
        "airQualityIndex":101,
@@ -84,7 +86,8 @@
    }
 }
 ```
-
+  
+##### Field Names & Definitions
 |**Field Name**|**Description**|**Type**|**Range**|**Sample**|**Nulls Allowed**|
 | :- | :- | :-: | :- | :- | :-: |
 |**globalairquality**|**Response Section Header: Non-Repeating Elements**|**object**||||
@@ -117,8 +120,57 @@
 - The API provides information on temperature, precipitation, wind, barometric pressure, visibility, ultraviolet (UV) radiation, and other related weather observations elements as well as date/time, weather icon codes and phrases.
 - The field names are sorted alphabetically in the table below. It doesn't represent the sort order of the API response.
 - Each field in the response contains 24 values for 24 hours, for each lat/long.
+- **API URL**: '''https://api.weather.com/v3/aggcommon/v3-wx-conditions-historical-hourly-1day?geocodes='''+geostring+'''&language=en-US&format=json&units=m&apiKey='''+apiKey
+	- Geostring is comma separated co-ordinates (latitude,longitude) followed by semicolon ; 
+- JSON Response:
+```json
+//This response is for 1 lat/long
+[
+    {
+        "id": "44.798,-63.102",
+        "v3-wx-conditions-historical-hourly-1day": {
+                    “cloudCeiling”:[1200...],
+                    "dayOfWeek": ["Saturday",...],
+                    "dayOrNight": ["D",...],
+                    "expirationTimeUtc": [1474132031,...],
+                    "iconCode": [30,...],
+                    "iconCodeExtend": [3000,...],
+                    "precip24Hour": [0,...],
+                    "pressureAltimeter": [30.14,...],
+                    "pressureChange": [-0.05,...],
+                    "pressureMeanSeaLevel": [1020.6,...],
+                    "pressureTendencyCode": [2,...],
+                    "pressureTendencyTrend": ["Falling",...],
+                    "relativeHumidity": [51,...],
+                    "snow24Hour": [0,...],
+                    "sunriseTimeLocal": ["2016-09-17T07:21:26-0400",...],
+                    "sunriseTimeUtc": [1474111286,...],
+                    "sunsetTimeLocal": ["2016-09-17T19:39:03-0400",...],
+                    "sunsetTimeUtc": [1474155543,...],
+                    "temperature": [86,...],
+                    "temperatureChange24Hour": [-2,...],
+                    "temperatureDewPoint": [66,...],
+                    "temperatureFeelsLike": [89,...],
+                    "temperatureHeatIndex": [89,...],
+                    "temperatureMax24Hour": [90,...],
+                    "temperatureMaxSince7Am": [86,...],
+                    "temperatureMin24Hour": [67,...],
+                    "temperatureWindChill": [86,...],
+                    "uvDescription": ["High",...],
+                    "uvIndex": [7,...],
+                    "validTimeLocal": ["2016-09-17T12:45:00-0400",...],
+                    "validTimeUtc": [1474130700,...],
+                    "visibility": [10,...],
+                    "windDirection": [110,...],
+                    "windDirectionCardinal": ["ESE",...],
+                    "windGust": [null,...],
+                    "windSpeed": [9,...],
+                    "wxPhraseLong": ["Partly Cloudy",...]
+    }
+]
+```
 
-
+##### Field Names & Definitions
 |Field Name|Description|Type|Range|Sample|Nulls Allowed|
 | :- | :- | :-: | :- | :- | :-: |
 |cloudCeiling|Base of lowest Mostly Cloudy or Cloudy layer. Note: This field can be NULL for any geographic location depending weather conditions|[integer]|Base of lowest Mostly Cloudy or Cloudy layer<br>Note: This field can be NULL for any geographic location depending weather conditions|1200|Y|

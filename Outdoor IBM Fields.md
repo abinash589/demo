@@ -195,7 +195,7 @@
 |version|Path Part|Current API version (example:  "v2")|
 |geocode|Query Parameter|For API’s which require a location for the data, the geocode is listed in order of latitude and longitude (ex. 34.53,-84.50)|
 |language|Query Parameter|Language to return the response in (ex. en-US)|
-|scale|Query Parameter| EPA Scale is suggested as the default Air Quality Index Scale|
+|units|Query Parameter| The unit of measure for the response. (ex. e=English units, m=Metric units, h=Hybrid units, s=Metric SI units)|
 |format|Quaery Parameter|The format of the response (“json”)|
 |apikey|Query Parameter|API key for accessing the API|
 

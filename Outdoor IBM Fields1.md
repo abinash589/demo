@@ -87,7 +87,7 @@
 }
 ```
   
-##### Field Names & Definitions
+#### Field Names & Definitions
 |**Field Name**|**Description**|**Type**|**Range**|**Sample**|**Nulls Allowed**|
 | :- | :- | :-: | :- | :- | :-: |
 |**globalairquality**|**Response Section Header: Non-Repeating Elements**|**object**||||
@@ -170,7 +170,7 @@
 ]
 ```
 
-##### Field Names & Definitions
+#### Field Names & Definitions
 |Field Name|Description|Type|Range|Sample|Nulls Allowed|
 | :- | :- | :-: | :- | :- | :-: |
 |cloudCeiling|Base of lowest Mostly Cloudy or Cloudy layer. Note: This field can be NULL for any geographic location depending weather conditions|[integer]|Base of lowest Mostly Cloudy or Cloudy layer<br>Note: This field can be NULL for any geographic location depending weather conditions|1200|Y|

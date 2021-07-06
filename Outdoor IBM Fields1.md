@@ -1,6 +1,89 @@
 ﻿### WeatherAPI Outdoor IBM- Pollutant Values
 
 - This API includes an overall Air Quality Index, Air Quality Category Index, category, principal pollutant type, measurement, index number and level, and any applicable health recommendation text.
+- [URL!](https://api.weather.com/v3/aggcommon/v3-wx-globalAirQuality?geocodes=44.798,-63.102;46.294,-63.337;45.046,-64.045;46.113,-62.588;44.859,-63.592;44.291,-64.323;44.379,-64.314;46.419,-62.706;46.328,-62.816;44.382,-65.91&language=en-US&scale=EPA&format=json&apiKey=b9f52b94800243e2b52b948002e3e2f9)
+- JSON Response:
+```json
+"globalairquality": {
+       "latitude": 76.6,
+       "longitude": 87.5,
+       "source": "Powered by Copernicus Atmosphere Monitoring Service",
+       "disclaimer": "Neither the European Commission nor ECMWF is responsible for any use of this information",
+       "airQualityIndex":101,
+       "airQualityCategory": "Unhealthy for Sensitive Groups",
+       "airQualityCategoryIndex": 3,
+       "airQualityCategoryIndexColor": "039963",
+       "primaryPollutant": "PM2.5",
+       "pollutants": {
+           "NO2": {
+               "name": "NO2",
+               "phrase": "Nitrogen Dioxide",
+               "amount": 41.4,
+               "unit": "ug/m3",
+               "category": "Good",
+               "categoryIndex": 1,
+               "index": 21
+           },
+           "O3": {
+               "name": "O3",
+               "phrase": "Ozone",
+               "amount": 110.0,
+               "unit": "ug/m3",
+               "category": "Good",
+               "categoryIndex": 1,
+               "index": 50
+           },
+           "SO2": {
+               "name": "SO2",
+               "phrase": "Sulfur Dioxide",
+               "amount": 26.2,
+               "unit": "ug/m3",
+               "category": "Good",
+               "categoryIndex": 1,
+               "index": 14
+           },
+           "PM2.5": {
+               "name": "PM2.5",
+               "phrase": "Particulate matter less than 2.5 microns",
+               "amount": 35,
+               "unit": "ug/m3",
+               "category": "Unhealthy for Sensitive Groups",
+               "categoryIndex": 3,
+               "index": 101
+           },
+           "PM10": {
+               "name": "PM10",
+               "phrase": "Particulate matter less than 10 microns",
+               "amount": 154.5,
+               "unit": "ug/m3",
+               "category": "Moderate",
+               "categoryIndex": 2,
+               "index": 100
+           },
+           "CO": {
+               "name": "CO",
+               "phrase": "Carbon Monoxide",
+               "amount": 8020.3,
+               "unit": "ug/m3",
+               "category": "Moderate",
+               "categoryIndex": 2,
+               "index": 76
+           }
+       },
+       "messages": {
+           "Sensitive Group": {
+               "title": "Sensitive Groups",
+               "text": "Reduce prolonged or heavy exertion. It's OK to be active outside, but take more breaks and do less intense activities. Watch for symptoms such as coughing or shortness of breath."
+           },
+           "General": {
+               "title": "General",
+               "text": "Members of sensitive groups may experience health effects. The general public is not likely to be affected."
+           }
+       },
+       "expireTimeGmt":1625544000
+   }
+}
+```
 
 |**Field Name**|**Description**|**Type**|**Range**|**Sample**|**Nulls Allowed**|
 | :- | :- | :-: | :- | :- | :-: |

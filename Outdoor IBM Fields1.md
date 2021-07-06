@@ -6,6 +6,7 @@
 - JSON Response:
 ```json
 //This response is for 1 lat/long
+
 "globalairquality": {
        "latitude": 44.798,
        "longitude": -63.102,
@@ -125,9 +126,10 @@
 - JSON Response:
 ```json
 //This response is for 1 lat/long
+
 [
     {
-        "id": "44.798,-63.102",
+        "id": "33.74,-84.39",
         "v3-wx-conditions-historical-hourly-1day": {
                     “cloudCeiling”:[1200...],
                     "dayOfWeek": ["Saturday",...],
@@ -168,6 +170,7 @@
                     "wxPhraseLong": ["Partly Cloudy",...]
     }
 ]
+
 ```
 
 #### Field Names & Definitions

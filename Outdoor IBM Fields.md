@@ -244,4 +244,4 @@
 |**API Name**|**Frequency**|**Purpose**|
 | :- | :- | :-: |
 |Weather API- Pollutant values|Every Hour|This API is called from a python script to extract pollutant values like PM2.5, PM10, SO2, NO2, CO values for each city by providing geocode as URL path compnent|
-|Historic API- Temperature & Humidity values|This API is called from a python script to extract temperature adn humidity values for each city  by providing geocode as URL path compnent|
+|Historic API- Temperature & Humidity values|Every Hour|This API is called from a python script to extract temperature adn humidity values for each city  by providing geocode as URL path compnent|

@@ -4,7 +4,7 @@
 - **API URL**: '''https://api.weather.com/v3/aggcommon/v3-wx-globalAirQuality?geocodes='''+geostring+''';&language=en-US&scale=EPA&format=json&apiKey='''+apiKey
 	- Geostring is comma separated co-ordinates (latitude,longitude) followed by semicolon ;
 - JSON Response:
-```json
+```javascript
 //This response is for 1 lat/long
 
 "globalairquality": {
@@ -124,12 +124,12 @@
 - **API URL**: '''https://api.weather.com/v3/aggcommon/v3-wx-conditions-historical-hourly-1day?geocodes='''+geostring+'''&language=en-US&format=json&units=m&apiKey='''+apiKey
 	- Geostring is comma separated co-ordinates (latitude,longitude) followed by semicolon ; 
 - JSON Response:
-```json
+```javascript
 //This response is for 1 lat/long
 
 [
     {
-        "id": "33.74,-84.39",
+        "id": "44.798,-63.102",
         "v3-wx-conditions-historical-hourly-1day": {
                     “cloudCeiling”:[1200...],
                     "dayOfWeek": ["Saturday",...],

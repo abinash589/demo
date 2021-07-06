@@ -5,8 +5,6 @@
 	- Geostring is comma separated co-ordinates (latitude,longitude) followed by semicolon ;
 - This API is called frequntly every hour using a Python script running in a databricks job, which is scheduled at 56 minutes past the hour(UTC).
 
-
-
 - JSON Response:
 ```javascript
 //This response is for 1 lat/long
@@ -96,7 +94,7 @@
 |**URL Part**|**URL Part Type**|**Description**|
 | :- | :- | :-: |
 |hostname|host|**api.weather.com** is the host for these API’s|
-|version|Path Part|Current API version (example:  "v2")|
+|version|Path Part|Current API version (example:  "v2","v3")|
 |geocode|Query Parameter|For API’s which require a location for the data, the geocode is listed in order of latitude and longitude (ex. 34.53,-84.50)|
 |language|Query Parameter|Language to return the response in (ex. en-US)|
 |scale|Query Parameter| EPA Scale is suggested as the default Air Quality Index Scale|
@@ -139,6 +137,7 @@
 - Each field in the response contains 24 values for 24 hours, for each lat/long.
 - **API URL**: '''https://api.weather.com/v3/aggcommon/v3-wx-conditions-historical-hourly-1day?geocodes='''+geostring+'''&language=en-US&format=json&units=m&apiKey='''+apiKey
 	- Geostring is comma separated co-ordinates (latitude,longitude) followed by semicolon ; 
+- This API is called frequntly every hour using a Python script running in a databricks job, which is scheduled at 56 minutes past the hour(UTC).
 - JSON Response:
 ```javascript
 //This response is for 1 lat/long
@@ -240,3 +239,8 @@
 |windSpeed|The wind is treated as a vector; hence, winds must have direction and magnitude (speed). The wind information reported in the hourly current conditions corresponds to a 10-minute average called the sustained wind speed. Sudden or brief variations in the wind speed are known as “wind gusts” and are reported in a separate data field. Wind directions are always expressed as "from whence the wind blows" meaning that a North wind blows from North to South. If you face North in a North wind the wind is at your face. Face southward and the North wind is at your back.|[integer]||8|Y|
 |wxPhraseLong|A text description of the observed weather conditions at the location|[string]||Partly Cloudy|Y|
 
+
+#### API Call Frequency
+|API Name|Frequency|Purpose|
+|Weather API- Pollutant values|Every Hour|This API is called from a python script to extract pollutant values like PM2.5, PM10, SO2, NO2, CO values for each city by providing geocode as URL path compnent|
+|Historic API- Temperature & Humidity values|This API is called from a python script to extract temperature adn humidity values for each city  by providing geocode as URL path compnent|

@@ -1,7 +1,7 @@
 ﻿### WeatherAPI Outdoor IBM- Pollutant Values
 
 - This API includes an overall Air Quality Index, Air Quality Category Index, category, principal pollutant type, measurement, index number and level, and any applicable health recommendation text.
-- **API URL**: '''https://api.weather.com/v3/aggcommon/v3-wx-globalAirQuality?geocodes='''+ geostring +''';&language=en-US&scale=EPA&format=json&apiKey='''+apiKey
+- **API URL**: '''https://api.weather.com/v3/aggcommon/v3-wx-globalAirQuality?geocodes='''+geostring+''';&language=en-US&scale=EPA&format=json&apiKey='''+apiKey
 	- Geostring is comma separated co-ordinates (latitude,longitude) followed by semicolon ;
 - JSON Response:
 ```json

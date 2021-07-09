@@ -2,7 +2,7 @@
 ### Flowchart:
 ![](https://github.com/abinash589/demo/blob/main/FilterSensorFlowchart.PNG)
 
-### Message Format
+### JSON Message:
 ```javascript
 {
 "filterId" : "20225",

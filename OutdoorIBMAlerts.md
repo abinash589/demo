@@ -1,4 +1,4 @@
-## Azure Functions
+## Outdoor IBM Alerts
 - 2 types of azure functions are used here:
   - HttpTriggerOutdoorAlerts
   - TimerTriggerOutdoorAlerts
@@ -13,6 +13,7 @@
   - Iterate for each alert(alertId) and invoke the stored procedure '**usp_OutdoorAirQuality_Notifications**' with input as 'alertid'.
   - Retrieve the following alert details from alert table for the alertid: alertid,alerttype,parameterName,alertNotificationText,alertNotificationTextFr,minthreshold,maxthreshold,nominthreshold,nomaxthreshold, improvementThreshold and alertFrequency
   - Whatever alerts eligible are associated for outdoor will be generated from this function which is indirectly using the stored procedure (**usp_OutdoorAirQuality_Notifications**) and populate the AccountAlerts table.
+  
   **For Normal Alerts**
   - For every normal alert there is a respective improvement alert.
   - Based on data in MonitoringSiteIBM msi , outdoorAirQualityDevice oad (msi.cityName =oad.userCity and msi.State = oad.userState), aa_user aau (aau.accountID = oad.accountID) and alerts al table, insert eligible records into accountalerts table which satisfies the below conditions:
@@ -21,12 +22,14 @@
 	- aau.airQualityNotificationEnabled = 'true' and oad.activeflag = 1.
 	- Check and ensure latest alert record for the state, city, accountId and alertId is improvementalert & the latest normal alert sent is more than alert.alertFrequency 60 minutes.
 	- Insert data in accountalerts from outdooor table oad.userCity, oad.userState, oad.accountId.
+	
   **For Deterioration Alerts**
   - Based on data in MonitoringSiteIBM msi , outdoorAirQualityDevice oad (msi.cityName = oad.userCity and msi.State = oad.userState), aa_user aau (aau.accountID = oad.accountID) and alerts al table, insert eligible records into accountalerts table which satisfies below conditions:
     - Aqi within AQI Severe threshold(200.50 to 500) : **msi.aqi >= @nominthreshold and msi.aqi <= @nomaxthreshold**, which is the severe range for AQI from AirQualityRange table.
 	- aau.airQualityNotificationEnabled = 'true' and oad.activeflag = 1.
 	- Check and ensure latest alert record for the state, city, accountId and alertId is improvementalert. If the latest alert sent is improvement alert, then ensure that latest normal alert sent is more than alert.alertFrequency 60 minutes.
-	- Insert data in accountalerts from outdooor table oad.userCity, oad.userState, oad.accountId
+	- Insert data in accountalerts from outdooor table oad.userCity, oad.userState, oad.accountId.
+	
   **For Improvemnt Alert**
   - Based on data in MonitoringSiteIBM msi , outdoorAirQualityDevice oad (msi.cityName = oad.userCity and msi.State = oad.userState), aa_user aau (aau.accountID = oad.accountID) and alerts al table, insert eligible records into accountalerts table which satisfies below conditions:
     - Aqi within AQI Good threshold : msi.aqi <= improvementThreshold.

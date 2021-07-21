@@ -78,6 +78,11 @@
 |stn_cmnt_cd|The pollen station comment code|String|Y|A - No Report, B - Equipment Failure, C - Reports only during weed pollen season, D - Reports Suspended, E - Rain/Inclement Weather, F - Does not report year round, G - Report valid more than one day, H- Operating Normally|H|
 |stn_cmnt|The reporting status of the pollen status|String|Y|No Report, Equipment Failure, Reports only during weed pollen season, Operating Normally, etc|operating normally|
 |**Pollen Observation – Occurs 4 times – Tree, Grass, Weed and Mold**||||||
-|pollen_type|Type of pollen|String|N|![](https://github.com/abinash589/demo/blob/main/Pollen%20Types.PNG) |Tree|
+|pollen_type|Type of pollen|String|N|![Pollen Types](https://github.com/abinash589/demo/blob/main/Pollen%20Types.PNG) |Tree|
 |pollen_idx|Pollen index value|String|N|0 to 4 or 9|1|
-|pollen_desc|Pollen index description|String|N|![](https://github.com/abinash589/demo/blob/main/Pollen%20Index%20Description.PNG) |1|
+|pollen_desc|Pollen index description|String|N|![Pollen Index Description](https://github.com/abinash589/demo/blob/main/Pollen%20Index%20Description.PNG) |1|
+
+### Pollen Outdoor Process Flowchart
+![Outdoor Pollen Process](https://github.com/abinash589/demo/blob/main/Outdoor%20Pollen%20Process.PNG)
+
+### Pollen Forecast Process 

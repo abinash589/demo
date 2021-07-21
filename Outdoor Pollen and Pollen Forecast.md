@@ -59,6 +59,6 @@
 |apikey|Query Parameter|API key for accessing the API|
 
 #### Data Elements & Descriptions
-| :- | :- | :- | :- | :- | :-: |
 |**Field Name**|**Description**|**Data Type**|**Null**|**Range**|**Sample**|
+| :- | :- | :- | :- | :- | :-: |
 |**Metadata**||||||

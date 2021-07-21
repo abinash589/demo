@@ -71,6 +71,13 @@
 |loc_nm|City name|String|N||Atlanta|
 |loc_st|State name|String|N||GA|
 |rpt_dt|The date and time the pollen observation was reported|Date|N|YYYY-MM-DD'T'HH:MM:SSZ|2014-04-08T15:00:00Z|
-|process time gmt|processed date/time in UNIX seconds|Long|N|Unlimited|1367892140|
+|process time gmt|Processed date/time in UNIX seconds|Long|N|Unlimited|1367892140|
 |**Tree Name – occurs 3 times**||||||
 |tree_nm|The name of the tree species with the highest observed pollen count|String|N|![](https://github.com/abinash589/demo/blob/main/Tree%20Name.PNG) |Cedar|
+|total_pollen_cnt|The total observed pollen count of the specified plants being measured at the location|Integers|Y|grains per cubic meter|551 grains per cubic meter|
+|stn_cmnt_cd|The pollen station comment code|String|Y|A - No Report, B - Equipment Failure, C - Reports only during weed pollen season, D - Reports Suspended, E - Rain/Inclement Weather, F - Does not report year round, G - Report valid more than one day, H- Operating Normally|H|
+|stn_cmnt|The reporting status of the pollen status|String|Y|No Report, Equipment Failure, Reports only during weed pollen season, Operating Normally, etc|operating normally|
+|**Pollen Observation – Occurs 4 times – Tree, Grass, Weed and Mold**||||||
+|pollen_type|Type of pollen|String|N|![](https://github.com/abinash589/demo/blob/main/Pollen%20Types.PNG) |Tree|
+|pollen_idx|Pollen index value|String|N|0 to 4 or 9|1|
+|pollen_desc|Pollen index description|String|N|![](https://github.com/abinash589/demo/blob/main/Pollen%20Index%20Description.PNG) |1|

@@ -62,3 +62,15 @@
 |**Field Name**|**Description**|**Data Type**|**Null**|**Range**|**Sample**|
 | :- | :- | :- | :- | :- | :-: |
 |**Metadata**||||||
+|Version|API version number|String|N||1|
+|transaction_id|Generated transaction id for the API call|String|N||7506556217027201134|
+|expire_time_gmt|Data expiration date/ time in UNIX seconds |Long|N|Unlimited|1373914800|
+|**US Pollen Observations**||||||
+|class|Type of data|String|N|pollenobs|pollenobs|
+|loc_id|Pollen station id|String|N|any valid pollen station|ALT|
+|loc_nm|City name|String|N||Atlanta|
+|loc_st|State name|String|N||GA|
+|rpt_dt|The date and time the pollen observation was reported|Date|N|YYYY-MM-DD'T'HH:MM:SSZ|2014-04-08T15:00:00Z|
+|process time gmt|processed date/time in UNIX seconds|Long|N|Unlimited|1367892140|
+|**Tree Name – occurs 3 times**||||||
+|tree_nm|The name of the tree species with the highest observed pollen count|String|N|![](https://github.com/abinash589/demo/blob/main/Tree%20Name.PNG) |Cedar|

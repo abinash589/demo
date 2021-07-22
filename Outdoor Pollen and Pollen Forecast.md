@@ -142,5 +142,5 @@
 ## API Call Frequency
 |**API Name**|**Frequency**|**Purpose**|
 | :- | :- | :-: |
-|US Pollen Observation|Once in a day|Return the index and index description for different types of pollen, for a valid latitude/longitude.|
-|Forecast Indices|Once in a day|Return the forecast indices for grass, ragweed and tree pollen, for coming future days|
+|US Pollen Observation (Outdoor Pollen Process)|Once in a day|Return the index and index description for different types of pollen, for a valid latitude/longitude.|
+|Forecast Indices (Pollen Forecast Process)|Once in a day|Return the forecast indices for grass, ragweed and tree pollen, for coming future days|

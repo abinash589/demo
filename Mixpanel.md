@@ -157,8 +157,10 @@
 <tr>
 <td><b>Response</b></td>
 <td>
-^ Extra blank line above!
+
+
 ```json
+json
 {
   "event": "Accept user agreement",
   "properties": {
@@ -187,7 +189,8 @@
   }
 }
 ```
-V Extra blank line below!
+
+
 </td><td></td>
 </tr>
 </table>

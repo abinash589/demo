@@ -1,11 +1,11 @@
-## Outdoor Pollen and Pollen Forecast
+# Outdoor Pollen and Pollen Forecast
 - There are 2 process for pollen data. They are:
   - Pollen Outdoor Process
   - Pollen Forecast Process
 
-### Pollen Outdoor Process
-- This process uses an IBM api, **US Pollen Observation**, to get the pollen data and not pollutants data(PM2.5,PM10,PM1).
-- The US Pollen Observation api returns the pollen observation content for a valid latitude/longitude coordinate.
+## Pollen Outdoor Process
+- This process uses an IBM API, **US Pollen Observation**, to get the pollen data and not pollutants data(PM2.5,PM10,PM1).
+- The US Pollen Observation API returns the pollen observation content for a valid latitude/longitude coordinate, for the current date.
 - The API will return the index and index description for four pollen types- tree pollen, grass pollen, weed pollen, mold pollen.
 - The API supports two languages – English and Spanish for the US.
 - Pollen data provided through this API is sourced from trusted third-party organization that collects data from allergist’s offices on weekdays, Monday – Friday, except holidays.
@@ -13,7 +13,7 @@
 - The remaining data segments contain information on the location, reporting date/time and station, the specific tree species, and index for tree pollen, grass pollen, weed pollen, or mold pollen.
 - **API URl:** '''https://api.weather.com/v1/geocode/'''+ str(lat) + """/""" + str(long) +'''/observations/pollen.json?language=en-US&apiKey=''' + apiKey
   - Required Parameters: geocode,language, format,apikey
-- JSON Response:
+- **JSON Response:**
 ```javascript
 {"metadata":{
     	"language": "en-US",
@@ -85,4 +85,62 @@
 #### Pollen Outdoor Process Flowchart
 ![Outdoor Pollen Process](https://github.com/abinash589/demo/blob/main/Outdoor%20Pollen%20Process.PNG)
 
-### Pollen Forecast Process 
+## Pollen Forecast Process 
+- This process uses an IBM API, **Forecast Indices API**, that provides forecast data.
+- The Forecast Indices API will return the data for coming future days(3,5,7,10 or 15 days).
+- The Pollen index provides forecast indices for Grass, Ragweed, and Tree pollen.
+- **API URL:** https://api.weather.com/v2/indices/pollen/daypart/15day?geocode=latitude,longitude&language=en-US&format=json&apiKey=yourAPIKey
+- **JSON Response:**
+```javascript
+{"metadata": {},
+"pollenForecast12hour": {
+"fcstValid": [],
+"fcstValidLocal": [],
+"dayInd": [],
+"num": [],
+"daypartName": [],
+"grassPollenIndex": [],
+"grassPollenCategory": [],
+"treePollenIndex": [],
+"treePollenCategory": [],
+"ragweedPollenIndex": [],
+"ragweedPollenCategory": []
+}}
+
+```
+#### URL Path Components
+|**URL Part**|**URL Part Type**|**Description**|
+| :- | :- | :-: |
+|hostname|host|**api.weather.com** is the host for these API’s|
+|version|Path Part|Current API version (example: "v2")|
+|geocode|Query Parameter|For API’s which require a location for the data, i.e., latitude and longitude (ex. 34.53,-84.50)|
+|language|Query Parameter|Language to return the response in (ex. en-US)|
+|format|Quaery Parameter|The format of the response (“json”)|
+|apikey|Query Parameter|API key for accessing the API|
+
+#### Data Elements & Descriptions
+|**Field Name**|**Description**|**Data Type**|**Null**|**Range**|**Sample**|
+| :- | :- | :- | :- | :- | :-: |
+|fcstValid|Time forecast is valid ... start of the forecast period, always 7am local time.|String|N||1369306800|
+|fcstValidLocal|Time forecast is valid ... start of the forecast period, always 7am local time.|Date|N||2013-05-23T07:00:00-0400|
+|num|Daypart Segment (12hour) - Sequential daypart number, where 1 = daytime of Day 0|Integer|N||21|
+|dayInd|Day / Night Indicator|String|N|D,N|D|
+|daypartName|Name of 12hr daypart, not including day names in first 48hrs|String|N||Tomorrow|
+|**Pollen Index**||||||
+|grassPollenCategory|Descriptive text of Grass Pollen Index|String|N||Low|
+|grassPollenIndex|Forecast Grass Pollen Index. 0=none / out of season, 1=low, 2=moderate, 3=high, 4=very high|Integer|N|0,4|2|
+|ragweedPollenCategory|Descriptive text of Ragweed Pollen Index|String|N||Low|
+|ragweedPollenIndex|Forecast Ragweed Pollen Index. 0=none / out of season, 1=low, 2=moderate, 3=high, 4=very high|Integer|N|0,4|1|
+|treePollenCategory|Descriptive text of Tree Pollen Index|String|N||Low|
+|treePollenIndex|Forecast Grass Pollen Index. 0=none / out of season, 1=low, 2=moderate, 3=high, 4=very high|Integer|N|0,4|3|
+
+##### Pollen Forecast Process Flowchart
+![](https://github.com/abinash589/demo/blob/main/Pollen%20Forecast%20Process.PNG)
+
+
+
+## API Call Frequency
+|**API Name**|**Frequency**|**Purpose**|
+| :- | :- | :-: |
+|US Pollen Observation|Once in a day|Return the index and index description for different types of pollen, for a valid latitude/longitude.|
+|Forecast Indices|Once in a day|Return the forecast indices for grass, ragweed and tree pollen, for coming future days|

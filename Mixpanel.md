@@ -143,10 +143,10 @@
 
 <table>
 <tr>
-<td>**URL**</td> <td>https://data.mixpanel.com/api/2.0/export</td><td></td>
+<td><b>URL</b></td> <td>https://data.mixpanel.com/api/2.0/export</td><td></td>
 </tr>
 <tr>
-<td>**Input Parameters**</td> <td>from_date</td> <td>2020-12-29</td>
+<td><b>Input Parameters</b></td> <td>from_date</td> <td>2020-12-29</td>
 </tr>
 <tr>
 <td></td> <td>to_date</td> <td>2020-12-31</td>
@@ -155,9 +155,10 @@
 <td></td> <td>Event</td> <td>["Accept user agreement"]</td>
 </tr>
 <tr>
-<td>**Response**</td>
+<td><b>Response</b></td>
 <td>
-```javascript
+^ Extra blank line above!
+```json
 {
   "event": "Accept user agreement",
   "properties": {
@@ -185,8 +186,8 @@
     "mp_processing_time_ms": 1609449079378
   }
 }
-
 ```
-</td>
+V Extra blank line below!
+</td><td></td>
 </tr>
 </table>

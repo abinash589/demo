@@ -1,9 +1,10 @@
 ## MixPanel API and Events
 
 **Following are the Mixpanel API call information for getting the response:**
+||||
 | :- | :- | :-: |
-|URL|||
-|Input Parameters|||
-||||
-||||
-|Response|||
+|URL|https://data.mixpanel.com/api/2.0/export||
+|Input Parameters|from_date|yyyy-mm-dd|
+||to_date|yyyy-mm-dd|
+||Event|["Event_name"]|
+|Response|JSON||

@@ -86,7 +86,7 @@
   - 200 	Success- Response:
 	
 ```javascript
-if period==day:
+if period==Day:
 {
 "deviceID":"5222",
 "city":"Texas City",
@@ -107,7 +107,7 @@ if period==day:
 ```
 
 ```javascript
-if period==month:
+if period==Month:
 {
 "deviceID":"5222",
 "city":"Texas City",
@@ -150,7 +150,7 @@ if period==month:
 ```
 
 ```javascript
-if period==year:
+if period==Year:
 {
 "deviceID":"5234",
 "city":"Texas City",
@@ -172,3 +172,7 @@ if period==year:
 		}
 }
 ```
+
+  - 400     {“reasonCode”: 1, “message”: “Invalid input parameter ”}
+  - 401 	Unauthorized
+  - 403 	Forbidden

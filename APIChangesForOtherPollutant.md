@@ -104,7 +104,9 @@
 		}
 }
 ```
+ 
     - if period==month:
+
 ```javascript
 {
 "deviceID":"5222",

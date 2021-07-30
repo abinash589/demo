@@ -175,4 +175,8 @@ if period==Year:
 		}
 }
 ```
+- **Note:**
+  - if period=day- API fetches the data from IBM_OutdoorAirQuality_Hourly.
+  - if period=month- API fetches the data from IBM_OutdoorAirQuality_Daily.
+  - if period=year- API fetches the data from IBM_OutdoorAirQuality_monthly.
 

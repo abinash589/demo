@@ -31,26 +31,26 @@
   - longitude *(optional)*
 - **Responses:**
   - 200 	Success- Response:
-							```javascript
-							{
-							"deviceID":"5231",
-							"city":"Kansas City",
-							"state":"KS",
-							"country":"United States",
-							"latitude":39.11417,
-							"longitude":-94.62746,
-							"lastUploadTS":"2021-07-27T07:00:00-05:00",
-							"lastUploadAQI":76.0,
-							"lastUploadTemperature":22.0,
-							"lastUploadHumidity":81.0,
-							"lastUploadPM10":42.0,
-							"lastUploadPM2_5":24.0,
-							"lastuploadSO2": ,
-							"lastUploadO3": ,
-							"lastuploadNO2": ,
-							"lastuploadCO": 
-							}
-							```
+```javascript
+{
+	"deviceID":"5231",
+	"city":"Kansas City",
+	"state":"KS",
+	"country":"United States",
+	"latitude":39.11417,
+	"longitude":-94.62746,
+	"lastUploadTS":"2021-07-27T07:00:00-05:00",
+	"lastUploadAQI":76.0,
+	"lastUploadTemperature":22.0,
+	"lastUploadHumidity":81.0,
+	"lastUploadPM10":42.0,
+	"lastUploadPM2_5":24.0,
+	"lastuploadSO2": ,
+	"lastUploadO3": ,
+	"lastuploadNO2": ,
+	"lastuploadCO": 
+}
+```
 	
   - 400     {“reasonCode”: 1, “message”: “Invalid input parameter ”}
   - 401 	Unauthorized
@@ -84,26 +84,26 @@
   - longitude *(optional)*
 - **Responses:**
   - 200 	Success- Response:
-		if period==day:	
-		```javascript
-		{
-		"deviceID":"5222",
-		"city":"Texas City",
-		"state":"TX",
-		"country":"United States",
-		"latitude":null,
-		"longitude":null,
-		"period":"day",
-		"data":{
-		"channels":["localTimestamp","AQI","PM2_5","PM10","temperature","humidity"],
-		"dataList":[["2021-07-27T00:00:00-05:00",26.0,6.0,14.0,29.0,76.0],
-					["2021-07-27T01:00:00-05:00",23.0,6.0,13.0,29.0,78.0],
-					["2021-07-27T02:00:00-05:00",21.0,5.0,13.0,28.0,79.0],
-					["2021-07-27T03:00:00-05:00",20.0,5.0,12.0,28.0,80.0],
-					["2021-07-27T04:00:00-05:00",20.0,5.0,12.0,28.0,81.0]]
-				}
+    - if period==day:	
+```javascript
+{
+"deviceID":"5222",
+"city":"Texas City",
+"state":"TX",
+"country":"United States",
+"latitude":null,
+"longitude":null,
+"period":"day",
+"data":{
+	"channels":["localTimestamp","AQI","PM2_5","PM10","temperature","humidity"],
+	"dataList":[["2021-07-27T00:00:00-05:00",26.0,6.0,14.0,29.0,76.0],
+				["2021-07-27T01:00:00-05:00",23.0,6.0,13.0,29.0,78.0],
+				["2021-07-27T02:00:00-05:00",21.0,5.0,13.0,28.0,79.0],
+				["2021-07-27T03:00:00-05:00",20.0,5.0,12.0,28.0,80.0],
+				["2021-07-27T04:00:00-05:00",20.0,5.0,12.0,28.0,81.0]]
 		}
-		```
+}
+```
 							
 		if period==month:```javascript
 							{

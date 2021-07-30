@@ -30,10 +30,10 @@
   - latitude *(optional)*
   - longitude *(optional)*
 - **Responses:**
-  - 200 	Success- Response:
   - 400     {“reasonCode”: 1, “message”: “Invalid input parameter ”}
   - 401 	Unauthorized
   - 403 	Forbidden
+  - 200 	Success- Response:
 ```javascript
 {
 	"deviceID":"5231",

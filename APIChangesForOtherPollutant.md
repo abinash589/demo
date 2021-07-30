@@ -82,25 +82,26 @@
   - longitude *(optional)*
 - **Responses:**
   - 200 	Success- Response:
-		if period==day:	```javascript
-						{
-							"deviceID":"5222",
-							"city":"Texas City",
-							"state":"TX",
-							"country":"United States",
-							"latitude":null,
-							"longitude":null,
-							"period":"day",
-							"data":{
-									"channels":["localTimestamp","AQI","PM2_5","PM10","temperature","humidity"],
-									"dataList":[["2021-07-27T00:00:00-05:00",26.0,6.0,14.0,29.0,76.0],
-												["2021-07-27T01:00:00-05:00",23.0,6.0,13.0,29.0,78.0],
-												["2021-07-27T02:00:00-05:00",21.0,5.0,13.0,28.0,79.0],
-												["2021-07-27T03:00:00-05:00",20.0,5.0,12.0,28.0,80.0],
-												["2021-07-27T04:00:00-05:00",20.0,5.0,12.0,28.0,81.0]]
-									}
-						}
-						```
+		if period==day:	
+		```javascript
+			{
+			"deviceID":"5222",
+			"city":"Texas City",
+			"state":"TX",
+			"country":"United States",
+			"latitude":null,
+			"longitude":null,
+			"period":"day",
+			"data":{
+					"channels":["localTimestamp","AQI","PM2_5","PM10","temperature","humidity"],
+					"dataList":[["2021-07-27T00:00:00-05:00",26.0,6.0,14.0,29.0,76.0],
+								["2021-07-27T01:00:00-05:00",23.0,6.0,13.0,29.0,78.0],
+								["2021-07-27T02:00:00-05:00",21.0,5.0,13.0,28.0,79.0],
+								["2021-07-27T03:00:00-05:00",20.0,5.0,12.0,28.0,80.0],
+								["2021-07-27T04:00:00-05:00",20.0,5.0,12.0,28.0,81.0]]
+					}
+			}
+		```
 							
 		if period==month:```javascript
 							{

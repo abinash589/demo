@@ -104,8 +104,7 @@
 		}
 }
 ```
-							
-	- if period==month:
+    - if period==month:
 ```javascript
 {
 "deviceID":"5222",
@@ -147,7 +146,7 @@
 		}
 }
 ```
-	- if period==Year:
+    - if period==Year:
 ```javascript
 {
 "deviceID":"5234",
@@ -170,7 +169,3 @@
 		}
 }
 ```
-						
-		
-							
-							

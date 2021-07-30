@@ -84,8 +84,9 @@
   - longitude *(optional)*
 - **Responses:**
   - 200 	Success- Response:
-    - if period==day:	
+	
 ```javascript
+if period==day:
 {
 "deviceID":"5222",
 "city":"Texas City",
@@ -104,10 +105,9 @@
 		}
 }
 ```
- 
-    - if period==month:
 
 ```javascript
+if period==month:
 {
 "deviceID":"5222",
 "city":"Texas City",
@@ -148,8 +148,9 @@
 		}
 }
 ```
-    - if period==Year:
+
 ```javascript
+if period==year:
 {
 "deviceID":"5234",
 "city":"Texas City",
